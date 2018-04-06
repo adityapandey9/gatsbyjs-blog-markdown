@@ -1,7 +1,6 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# gatsbyjs-blog-markdown
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+It is a blog build using gatsbyjs and blog post store in the markdown .md files
 
 ## Install
 
