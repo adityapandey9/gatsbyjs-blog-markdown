@@ -4,20 +4,26 @@ It is a blog build using gatsbyjs and blog post store in the markdown .md files
 
 ## Install
 
-Make sure that you have the Gatsby CLI program installed:
+First clone the repo:
+
 ```sh
-npm install --global gatsby-cli
+git clone https://github.com/adityapandey9/gatsbyjs-blog-markdown.git
+cd gatsbyjs-blog-markdown
 ```
 
-And run from your CLI:
+Make sure that you have the Gatsby CLI program installed:
 ```sh
-gatsby new gatsby-example-site
+npm install
 ```
 
 Then you can run it by:
 ```sh
-cd gatsby-example-site
 npm run develop
+```
+### OR
+
+```sh
+gatsby develop
 ```
 
 ## Deploy
