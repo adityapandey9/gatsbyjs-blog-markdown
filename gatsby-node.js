@@ -21,31 +21,30 @@ return graphql(`{
     relativeDirectory: {
       regex: "/"
     }
+    name: {eq: "index"}
   }) {
-    edges {
-      node {
-        dir
-        childMarkdownRemark{
-         	excerpt(pruneLength: 250)
-          html
-          id
-          frontmatter {
-            date
-            path
-            title
+    group(field: dir){
+      edges {
+        node {
+          childMarkdownRemark{
+            frontmatter{
+              path
+            }
           }
         }
       }
     }
   }
-}`)
+}
+`)
     .then(result => {
       if (result.errors) {
         return Promise.reject(result.errors);
       }
       // console.log("SS: ", JSON.stringify(result))
-result.data.allFile.edges
-        .forEach(({ node }) => {
+result.data.allFile.group
+        .forEach(({ edges }) => {
+          const node = edges[0].node
           // console.log("Node: ", JSON.stringify(node))
           createPage({
             path: node.childMarkdownRemark.frontmatter.path,

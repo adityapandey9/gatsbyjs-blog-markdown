@@ -84,7 +84,7 @@ TemplateWrapper.propTypes = {
 
 export const layoutQuery = graphql`
 query getBlogPost($last: Int = 3){
-  allMarkdownRemark(limit: $last){
+  allMarkdownRemark(limit: $last, filter: {fileAbsolutePath: {regex: "/\/index.md/g"}}){
    edges {
      node {
        excerpt(pruneLength: 140)
